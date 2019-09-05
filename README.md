@@ -127,7 +127,7 @@ $ mv default_config.py .config/qtile/
 $ sudo pacman -S compton lightdm-gtk-greeter-settings lxappearance 
 ```
 
-Example `.xinitrc` file:
+`.xinitrc`:
 ```
 xrandr --dpi 150
 xrandr --output eDP1 --scale 1x1 --mode 3840x2160
@@ -136,7 +136,7 @@ compton --config /home/nick/.config/compton/compton.conf
 exec qtile
 ```
 
-Example `.Xresources` file:
+`.Xresources`:
 ```
 ! Fonts {{{
 Xft.antialias:  true
@@ -147,6 +147,14 @@ Xft.dpi:        150
 ! }}}
 ```
 
+`/etc/X11/xorg.conf.d/90-monitor.conf`:
+```
+Section "Monitor"
+	Identifier	"eDP1"
+	DisplaySize	294.4 165.6 # In millimeters
+	Option		"DPI" "312"
+EndSection
+```
 
 
 ## Additional Software and Applications

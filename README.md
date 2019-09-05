@@ -51,7 +51,7 @@ Follow standard installation procedures using the newly allocated block of memor
 
 
 
-### Partitioning the Disk
+### Creating Partitions for Linux
 Since the Dell XPS 13 laptops do not have standard USB ports, the ouput of commands such as `df -h` will not follow the conventional `/dev/sda*` format.  Instead the laptop's hard drive will likely have entries listed in the form `/dev/nvme0n1p*`, with the final digit specifying a partition number on the drive.  New partitions can be created using standard tools such as `fdisk` or `cfdisk`, as described in the installation videos.
 
 __Note__: The Arch USB was not able to detect the laptop's hard drive on my first installation attempt.  This issue was resolved by disabling Bitlocker Encryption on Windows and changing the SATA operating mode to `AHCI` in my case.

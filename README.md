@@ -44,9 +44,33 @@ Follow standard installation procedures using the newly allocated block of memor
 * [GTRONICK](https://www.youtube.com/channel/UCUpnwLms-qS0APsWMXylJzA) [Spanish] - [Installation Video](https://www.youtube.com/watch?v=pd1hgF4p8gw&t=1939s) for dual-booting with the installation instructions [here](https://gtronick.github.io/ALIG-DUAL/)
 
 
+For the choice of bootloader, I followed GTRONICK and used `systemd-boot` which worked well without much effort and correctly identified and included the Windows 10 boot option.  This method can be carried out using the following commands:
+
 ```console
-$ 
+$ pacman -S systemd-boot
+$ bootctl --path=/boot install
 ```
+The configuration settings should then be specified in the `/boot/loader/loader.conf` file, with something along the lines of:
+```
+default arch
+timeout 3
+console-mode max
+editor 0
+```
+GTRONICK also provides an easy way of retrieving the hard drive's UUID which starts by issuing the command:
+```
+echo $(blkid -s PARTUUID -o value /dev/sda6) > /boot/loader/entries/arch.conf
+```
+and is completed by editing the `/boot/loader/entries/arch.conf` file to include the loader specifications:
+```
+title ArchLinux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options root=PARTUUID=<UUID SENT TO FILE IN PREVIOUS STEP> rw
+```
+
+Also be sure to install the networking and wireless packages (e.g. `wpa_supplicant`) so that you will have an internet connection after rebooting the machine.
+
 
 References:
 * [https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda](https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda)

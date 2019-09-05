@@ -21,8 +21,9 @@ This repository provides a basic overview of the steps required for dual-booting
 ### (Optionally?) Switch SATA operating mode from `RAID` to `AHCI`
 * Open 
 * Click
+
 References:
-* [https://bbs.archlinux.org/viewtopic.php?id=245335](https://bbs.archlinux.org/viewtopic.php?id=245335]
+* [https://bbs.archlinux.org/viewtopic.php?id=245335](https://bbs.archlinux.org/viewtopic.php?id=245335)
 * [https://support.thinkcritical.com/kb/articles/switch-windows-10-from-raid-ide-to-ahci](https://support.thinkcritical.com/kb/articles/switch-windows-10-from-raid-ide-to-ahci)
 
 

@@ -81,9 +81,18 @@ Also be sure to install the networking and wireless packages (e.g. `wpa_supplica
 
 
 
+## Configuring Graphical Environment for 4K Display
+
+The graphical environment which I personally installed comprised the following packages:
+* [LightDM](https://freedesktop.org/wiki/Software/LightDM/) - Lightweight display manager
+* [Xorg](https://www.x.org/wiki/) - Open source implementation of X window system
+* [Qtile](http://www.qtile.org/) - Tiling window manager
 
 
-## Software and Applications
+
+
+
+## Additional Software and Applications
 * [Xorg](https://www.x.org/wiki/) - Open source implementation of X window system
 * [GTK+](https://www.gtk.org/) - Toolkit for graphical user interfaces
 * [LXAppearance](https://wiki.lxde.org/en/LXAppearance) - Lightweight GTK+ style configuration tool

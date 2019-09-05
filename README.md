@@ -18,7 +18,7 @@ This repository provides a basic overview of the steps required for dual-booting
 * Click
 
 
-### (Optionally?) Switch SATA operating mode from `RAID` to `AHCI`
+### Switch SATA operating mode from `RAID` to `AHCI` (Optional?)
 * Open 
 * Click
 

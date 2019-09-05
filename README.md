@@ -111,11 +111,11 @@ $ sudo pacman -S qtile
 At the time of this writing, the default configuration file is not placed correctly (or at all) and must be pulled from the project's GitHub repository:
 ```console
 $ sudo pacman -S wget
-$ mkdir .config
-$ mkdir .config/qtile
+$ mkdir ~/.config
+$ mkdir ~/.config/qtile
 $ wget https://raw.githubusercontent.com/qtile/qtile/master/libqtile/resources/default_config.py ./
 $ chmod 755 default_config.py
-$ mv default_config.py .config/qtile/
+$ mv default_config.py ~/.config/qtile/
 ```
 
 

@@ -36,6 +36,12 @@ References:
 
 
 
+### Resize Windows Partition 
+* Open 
+* Click
+
+
+
 
 ## Installing Arch Linux
 
@@ -90,6 +96,56 @@ The graphical environment which I personally installed comprised the following p
 * [Qtile](http://www.qtile.org/) - Tiling window manager
 
 
+
+### Installing Xorg and LightDM
+
+The Xorg window system and LightDM desktop manager can be installed from the Arch repositories via: 
+```console
+$ sudo pacman -S xorg lightdm lightdm-gtk-greeter 
+```
+
+### Installing Qtile
+
+The Qtile window manager can be installed from the Arch repositories via: 
+```console
+$ sudo pacman -S qtile
+```
+
+At the time of this writing, the default configuration file is not placed correctly (or at all) and must be pulled from the project's GitHub repository:
+```console
+$ sudo pacman -S wget
+$ mkdir .config
+$ mkdir .config/qtile
+$ wget https://raw.githubusercontent.com/qtile/qtile/master/libqtile/resources/default_config.py ./
+$ chmod 755 default_config.py
+$ mv default_config.py .config/qtile/
+```
+
+
+### Configuring Display
+```console
+$ sudo pacman -S compton lightdm-gtk-greeter-settings lxappearance 
+```
+
+Example `.xinitrc` file:
+```
+xrandr --dpi 150
+xrandr --output eDP1 --scale 1x1 --mode 3840x2160
+sleep 2
+compton --config /home/nick/.config/compton/compton.conf 
+exec qtile
+```
+
+Example `.Xresources` file:
+```
+! Fonts {{{
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.rgba:       rgb
+Xft.hintstyle:  hintfull
+Xft.dpi:        150
+! }}}
+```
 
 
 

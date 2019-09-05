@@ -183,13 +183,13 @@ $ sudo pacman -S lightdm-gtk-greeter-settings lxappearance
 In my case, setting the font size to `16` in `lxappearance` and changing the DPI to `150` in `lightdm-gtk-greeter-settings` produced the desired results.
 
 
-<--!
+<!--
 __Note__: I also came across some posts which suggested creating the file `/etc/profile.d/gtk3-hidpi.sh` with the following contents:
 ```
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 ```
-!-->
+--!>
 
 ## Additional Software and Applications
 * [Xorg](https://www.x.org/wiki/) - Open source implementation of X window system

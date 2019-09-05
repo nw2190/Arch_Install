@@ -20,8 +20,7 @@ __Warning__: I am not sure if this step is completely necessary, and I definitel
 
 By following the instructions provided [here](https://support.thinkcritical.com/kb/articles/switch-windows-10-from-raid-ide-to-ahci), I was able to safely switch the operating mode the second time around.
 
-Additional References:
-* [https://bbs.archlinux.org/viewtopic.php?id=245335](https://bbs.archlinux.org/viewtopic.php?id=245335)
+Reference: [https://bbs.archlinux.org/viewtopic.php?id=245335](https://bbs.archlinux.org/viewtopic.php?id=245335)
 
 
 
@@ -45,8 +44,7 @@ Since the Dell XPS 13 laptops do not have standard USB ports, the ouput of comma
 
 __Note__: The Arch USB was not able to detect the laptop's hard drive on my first installation attempt.  This issue was resolved by disabling Bitlocker Encryption on Windows and changing the SATA operating mode to `AHCI` in my case.
 
-References:
-* [https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda](https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda)
+Reference: [https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda](https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda)
 
 
 ### Installing a Boot Loader

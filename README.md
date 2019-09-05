@@ -7,7 +7,7 @@ and focuses on steps which require extra attention when installing on Dell XPS 1
 ## Configuring Windows 10
 
 ### Disable Fast Startup
-The Fast Startup option should be disabled in Windows prior to installing Linux; this can be done relatively simply by following the steps outlined [here](https://help.uaudio.com/hc/en-us/articles/213195423-How-To-Disable-Fast-Startup-in-Windows-10).
+The Fast Startup option should be disabled in Windows prior to installing Linux; this can be done relatively easily by following the steps outlined [here](https://help.uaudio.com/hc/en-us/articles/213195423-How-To-Disable-Fast-Startup-in-Windows-10).
 
 ### Disable Secure Boot
 Secure boot should also be disabled before attempting to install Linux; this is a slightly more involved process, but the steps are outlined [here](https://www.appgeeker.com/recovery/disable-uefi-secure-boot-in-windows-10.html).

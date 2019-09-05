@@ -18,7 +18,7 @@ This is a very important step which I missed initially; Arch will not be able to
 
 
 ### Switch SATA operating mode from `RAID` to `AHCI` (Optional?)
-__Warning__: I am not sure if this step is completely necessary, and I definitely came close to irrevocably breaking Windows the first time I attempted it.
+__Warning__: I am not sure if this step is entirely necessary, and I definitely came close to completely breaking Windows the first time I attempted it.
 
 By following the instructions provided [here](https://support.thinkcritical.com/kb/articles/switch-windows-10-from-raid-ide-to-ahci), I was able to safely switch the operating mode the second time around.
 
@@ -28,7 +28,7 @@ Reference: [https://bbs.archlinux.org/viewtopic.php?id=245335](https://bbs.archl
 
 
 ### Resize Windows Partition
-Once the steps above have been completed, we just need to free up space on the hard drive for Linux.  On a fresh install, this can easily be done using Windows Disk Management application by following the stpes [here](https://www.howtogeek.com/101862/how-to-manage-partitions-on-windows-without-downloading-any-other-software/).
+Once the steps above have been completed, we just need to free up space on the hard drive for Linux.  On a fresh install, this can easily be done using Windows Disk Management application by following the steps [here](https://www.howtogeek.com/101862/how-to-manage-partitions-on-windows-without-downloading-any-other-software/).
 
 
 

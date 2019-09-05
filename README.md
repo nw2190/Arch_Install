@@ -171,7 +171,7 @@ In Qtile, it suffices to modify the launch commands for each application accordi
 Key(["control", "shift"], "s",
      lazy.spawn("spotify --force-device-scale-factor=2.25 %U")),
 Key(["control", "shift"], "w",
-     lazy.spawn("/usr/bin/google-chrome-beta --force-device-scale-factor=2.0 --disable-features=SendMouseLeaveEvents"))
+     lazy.spawn("/usr/bin/google-chrome-beta --force-device-scale-factor=2.0"))
 ```
 
 

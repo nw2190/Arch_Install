@@ -95,6 +95,12 @@ The Xorg window system and LightDM desktop manager can be installed from the Arc
 $ sudo pacman -S xorg lightdm lightdm-gtk-greeter 
 ```
 
+I also installed the `compton` compositor for Xorg, which may or may not be necessary for the steps below to work correctly:
+```console
+$ sudo pacman -S compton
+```
+
+
 ### Installing Qtile
 
 The Qtile window manager can be installed from the Arch repositories via: 
@@ -114,10 +120,6 @@ $ mv default_config.py .config/qtile/
 
 
 ### Configuring Display for 4K Resolution
-```console
-$ sudo pacman -S compton lightdm-gtk-greeter-settings lxappearance 
-```
-
 I was not able to find a definitive guide to working with the 4K display in Xorg without relying on a larger desktop environment such as Gnome or KDE.
 However, I was able to achieve the desired effect by creating/modifying the following configuration files:
 
@@ -156,7 +158,7 @@ The values for these configuration files are simply my best guess as to what the
 With these settings, Arch correctly(ish?) determines the display size and uses the high DPI configuration.  This can be verified using the `xdpyinfo` command:
 ```console
 $ sudo pacman -S xdpyinfo
-$ xdpyinfo |grep -B 2 resolution
+$ xdpyinfo | grep -B 2 resolution
 screen #0:
   dimensions:    3840x2160 pixels (294x165 millimeters)
   resolution:    332x333 dots per inch
@@ -174,7 +176,13 @@ Key(["control", "shift"], "w",
      lazy.spawn("/usr/bin/google-chrome-beta --force-device-scale-factor=2.0"))
 ```
 
+#### LightDM and GTK Display settings
 
+The `lightdm-gtk-greeter-settings` and `lxappearance` packages provide simple graphical interfaces for adjusting display settinggs.
+```console
+$ sudo pacman -S lightdm-gtk-greeter-settings lxappearance 
+```
+In my case, setting the font size to `16` in `lxappearance` and changing the DPI to `150` in `lightdm-gtk-greeter-settings` produced the desired results.
 
 
 

@@ -169,7 +169,7 @@ which is significantly better than the `95x95` dpi setting that was used by the 
 #### Application Display Sizes
 The simplest way to correct for the high resolution display on applications such as Google Chrome or Spotify is to use the command line argument `--force-device-scale-factor`.
 In Qtile, it suffices to modify the launch commands for each application accordingly; for example, the following lines can be included in the `keys` list of Qtile's `~/.config/qtile/config.py` configuration file:
-```
+```python
 Key(["control", "shift"], "s",
      lazy.spawn("/usr/bin/spotify --force-device-scale-factor=2.25 %U")),
 Key(["control", "shift"], "w",

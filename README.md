@@ -118,6 +118,9 @@ $ mv default_config.py .config/qtile/
 $ sudo pacman -S compton lightdm-gtk-greeter-settings lxappearance 
 ```
 
+I was not able to find a definitive guide to working with the 4K display in Xorg without relying on a larger desktop environment such as Gnome or KDE.
+However, I was able to achieve the desired effect by creating/modifying the following configuration files:
+
 `.xinitrc`:
 ```
 xrandr --dpi 150
@@ -146,6 +149,9 @@ Section "Monitor"
 	Option		"DPI" "312"
 EndSection
 ```
+
+The values for these configuration files are simply my best guess as to what the true values should be; in particular, the `DisplaySize` values are just rough estimates I made using a tape measure.  I am sure there is a more precise way to do this, but it seems to work for now at least...
+
 
 With these settings, Arch correctly(ish?) determines the display size and uses the high DPI configuration.  This can be verified using the `xdpyinfo` command:
 ```console

@@ -147,6 +147,17 @@ Section "Monitor"
 EndSection
 ```
 
+With these settings, Arch correctly(ish?) determines the display size and uses the high DPI configuration.  This can be verified using the `xdpyinfo` command:
+```console
+$ sudo pacman -S xdpyinfo
+$ xdpyinfo |grep -B 2 resolution
+screen #0:
+  dimensions:    3840x2160 pixels (294x165 millimeters)
+  resolution:    332x333 dots per inch
+```
+which is significantly better than the `95x95` dpi setting that was used by the default configuration. 
+
+
 
 ## Additional Software and Applications
 * [Xorg](https://www.x.org/wiki/) - Open source implementation of X window system

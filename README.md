@@ -5,40 +5,29 @@ This repository provides a basic overview of the steps required for dual-booting
 ## Configuring Windows 10
 
 ### Disable Fast Startup
-* Open 
-* Click
-
-References:
-* [https://help.uaudio.com/hc/en-us/articles/213195423-How-To-Disable-Fast-Startup-in-Windows-10](https://help.uaudio.com/hc/en-us/articles/213195423-How-To-Disable-Fast-Startup-in-Windows-10)
+The Fast Startup option should be disabled in Windows prior to installing Linux; this can be done relatively simply by following the steps outlined [here](https://help.uaudio.com/hc/en-us/articles/213195423-How-To-Disable-Fast-Startup-in-Windows-10).
 
 ### Disable Secure Boot
-* Open 
-* Click
+Secure boot should also be disabled before attempting to install Linux; this is a slightly more involved process, but the steps are outlined [here](https://www.appgeeker.com/recovery/disable-uefi-secure-boot-in-windows-10.html).
 
-References:
-* [https://www.appgeeker.com/recovery/disable-uefi-secure-boot-in-windows-10.html](https://www.appgeeker.com/recovery/disable-uefi-secure-boot-in-windows-10.html)
 
-### Disable Bitlocker Encryption
-* Open 
-* Click
-
-References:
-* [https://www.manageengine.com/products/os-deployer/help/how-to-disable-bitlocker-encryption.html](https://www.manageengine.com/products/os-deployer/help/how-to-disable-bitlocker-encryption.html)
+### Disable BitLocker Encryption
+This is a very important step which I missed initially; Arch will not be able to access the laptop's hard drive without disabling Microsoft's "BitLocker" encryption on the drive.  The relevant steps are provided [here](https://www.manageengine.com/products/os-deployer/help/how-to-disable-bitlocker-encryption.html).
 
 
 ### Switch SATA operating mode from `RAID` to `AHCI` (Optional?)
-* Open 
-* Click
+__Warning__: I am not sure if this step is completely necessary, and I definitely came close to irrevocably breaking Windows the first time I attempted it.
 
-References:
+By following the instructions provided [here](https://support.thinkcritical.com/kb/articles/switch-windows-10-from-raid-ide-to-ahci), I was able to safely switch the operating mode the second time around.
+
+Additional References:
 * [https://bbs.archlinux.org/viewtopic.php?id=245335](https://bbs.archlinux.org/viewtopic.php?id=245335)
-* [https://support.thinkcritical.com/kb/articles/switch-windows-10-from-raid-ide-to-ahci](https://support.thinkcritical.com/kb/articles/switch-windows-10-from-raid-ide-to-ahci)
 
 
 
-### Resize Windows Partition 
-* Open 
-* Click
+
+### Resize Windows Partition
+Once the steps above have been completed, we just need to free up space on the hard drive for Linux.  On a fresh install, this can easily be done using Windows Disk Management application by following the stpes [here](https://www.howtogeek.com/101862/how-to-manage-partitions-on-windows-without-downloading-any-other-software/).
 
 
 

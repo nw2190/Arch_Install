@@ -90,7 +90,7 @@ Also be sure to install the networking and wireless packages (e.g. `wpa_supplica
 
 
 
-## Configuring Graphical Environment for 4K Display
+## Configuring Graphical Environment
 
 The graphical environment which I personally installed comprised the following packages:
 * [LightDM](https://freedesktop.org/wiki/Software/LightDM/) - Lightweight display manager
@@ -124,7 +124,7 @@ $ mv default_config.py .config/qtile/
 ```
 
 
-### Configuring Display
+### Configuring Display for 4K Resolution
 ```console
 $ sudo pacman -S compton lightdm-gtk-greeter-settings lxappearance 
 ```

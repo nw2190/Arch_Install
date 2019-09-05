@@ -189,7 +189,7 @@ __Note__: I also came across some posts which suggested creating the file `/etc/
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 ```
---!>
+-->
 
 ## Additional Software and Applications
 * [Xorg](https://www.x.org/wiki/) - Open source implementation of X window system

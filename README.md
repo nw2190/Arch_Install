@@ -44,7 +44,15 @@ Follow standard installation procedures using the newly allocated block of memor
 * [GTRONICK](https://www.youtube.com/channel/UCUpnwLms-qS0APsWMXylJzA) [Spanish] - [Installation Video](https://www.youtube.com/watch?v=pd1hgF4p8gw&t=1939s) for dual-booting with the installation instructions [here](https://gtronick.github.io/ALIG-DUAL/)
 
 
-For the choice of bootloader, I followed GTRONICK and used `systemd-boot` which worked well without much effort and correctly identified and included the Windows 10 boot option.  This method can be carried out using the following commands:
+
+### Partitioning the Disk
+Since the Dell XPS 13 laptops do not have standard USB ports, the ouput of commands such as `df -h` will not follow the conventional `/dev/sda*` format.  Instead the laptop's hard drive will likely have entries listed in the form `/dev/nvme0n1p*`, with the final digit specifying a partition number on the drive.
+References:
+* [https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda](https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda)
+
+
+### Installing a Boot Loader
+For the choice of boot loader, I personally followed GTRONICK and used `systemd-boot` which worked well without much effort and correctly identified and included the Windows 10 boot option.  This method can be carried out using the following commands:
 
 ```console
 $ pacman -S systemd-boot
@@ -72,8 +80,6 @@ options root=PARTUUID=<UUID SENT TO FILE IN PREVIOUS STEP> rw
 Also be sure to install the networking and wireless packages (e.g. `wpa_supplicant`) so that you will have an internet connection after rebooting the machine.
 
 
-References:
-* [https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda](https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda)
 
 
 

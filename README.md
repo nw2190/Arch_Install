@@ -8,14 +8,22 @@ This repository provides a basic overview of the steps required for dual-booting
 * Open 
 * Click
 
+References:
+* [https://help.uaudio.com/hc/en-us/articles/213195423-How-To-Disable-Fast-Startup-in-Windows-10](https://help.uaudio.com/hc/en-us/articles/213195423-How-To-Disable-Fast-Startup-in-Windows-10)
+
 ### Disable Secure Boot
 * Open 
 * Click
 
+References:
+* [https://www.appgeeker.com/recovery/disable-uefi-secure-boot-in-windows-10.html](https://www.appgeeker.com/recovery/disable-uefi-secure-boot-in-windows-10.html)
 
 ### Disable Bitlocker Encryption
 * Open 
 * Click
+
+References:
+* [https://www.manageengine.com/products/os-deployer/help/how-to-disable-bitlocker-encryption.html](https://www.manageengine.com/products/os-deployer/help/how-to-disable-bitlocker-encryption.html)
 
 
 ### Switch SATA operating mode from `RAID` to `AHCI` (Optional?)

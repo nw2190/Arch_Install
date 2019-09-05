@@ -47,6 +47,7 @@ Follow standard installation procedures using the newly allocated block of memor
 
 ### Partitioning the Disk
 Since the Dell XPS 13 laptops do not have standard USB ports, the ouput of commands such as `df -h` will not follow the conventional `/dev/sda*` format.  Instead the laptop's hard drive will likely have entries listed in the form `/dev/nvme0n1p*`, with the final digit specifying a partition number on the drive.
+
 References:
 * [https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda](https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda)
 

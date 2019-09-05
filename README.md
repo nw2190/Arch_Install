@@ -123,7 +123,7 @@ $ sudo pacman -S compton lightdm-gtk-greeter-settings lxappearance
 xrandr --dpi 150
 xrandr --output eDP1 --scale 1x1 --mode 3840x2160
 sleep 2
-compton --config /home/nick/.config/compton/compton.conf 
+compton 
 exec qtile
 ```
 

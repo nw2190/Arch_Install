@@ -111,7 +111,7 @@ The graphical environment which I personally installed comprised the following p
 * [PCManFM](https://wiki.lxde.org/en/PCManFM) - Lightweight GUI file manager
 * [Baobab](http://www.marzocca.net/linux/baobab/) - Graphical disk usage analyzer
 * [Xscreensaver](https://www.jwz.org/xscreensaver/) - Screensaver for Xorg
-* [Redshift](http://jonls.dk/redshift/) - Screen color temperature and brightness scheduler
+* [Redshift](http://jonls.dk/redshift/) - Screen color temperature/brightness scheduler
 * [VLC](https://www.videolan.org/vlc/index.html) - All purpose multimedia player
 * [MPlayer](http://mplayerhq.hu/design7/news.html) - Lightweight multimedia player
 * [Evince](https://wiki.gnome.org/Apps/Evince) - Document viewer

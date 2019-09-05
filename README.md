@@ -123,7 +123,7 @@ $ mv default_config.py ~/.config/qtile/
 I was not able to find a definitive guide to working with the 4K display in Xorg without relying on a larger desktop environment such as Gnome or KDE.
 However, I was able to achieve the desired effect by creating/modifying the following configuration files:
 
-`.xinitrc`:
+`.xinitrc`
 ```
 xrandr --dpi 150
 xrandr --output eDP1 --scale 1x1 --mode 3840x2160
@@ -132,7 +132,7 @@ compton
 exec qtile
 ```
 
-`.Xresources`:
+`.Xresources`
 ```
 ! Fonts {{{
 Xft.antialias:  true
@@ -143,7 +143,7 @@ Xft.dpi:        150
 ! }}}
 ```
 
-`/etc/X11/xorg.conf.d/90-monitor.conf`:
+`/etc/X11/xorg.conf.d/90-monitor.conf`
 ```
 Section "Monitor"
 	Identifier	"eDP1"

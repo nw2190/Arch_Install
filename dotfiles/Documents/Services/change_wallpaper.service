@@ -1,0 +1,11 @@
+[Unit]
+Description=Periodically change wallpaper
+
+[Service]
+User=nick
+Type=oneshot
+Environment=DISPLAY=:0
+ExecStart=/bin/bash -c "/home/nick/Documents/Scripts/change_wallpaper.sh"
+
+[Install]
+WantedBy=default.target

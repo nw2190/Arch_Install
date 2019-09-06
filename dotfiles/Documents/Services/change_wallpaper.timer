@@ -1,0 +1,10 @@
+[Unit]
+Description=Periodically change wallpaper
+
+[Timer]
+OnStartupSec=120s
+OnUnitActiveSec=120s
+
+[Install]
+WantedBy=timers.target
+

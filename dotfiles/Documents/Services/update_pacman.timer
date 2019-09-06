@@ -1,0 +1,12 @@
+[Unit]
+Description=Hourly pacman update
+Wants=network-online.target
+After=network.target network-online.target
+
+[Timer]
+OnStartupSec=120
+OnUnitActiveSec=1h
+
+[Install]
+WantedBy=timers.target
+

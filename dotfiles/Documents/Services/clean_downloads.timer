@@ -1,0 +1,10 @@
+[Unit]
+Description=Periodically move old downloads to tmp folder
+
+[Timer]
+OnStartupSec=5min
+OnUnitActiveSec=1w
+
+[Install]
+WantedBy=timers.target
+

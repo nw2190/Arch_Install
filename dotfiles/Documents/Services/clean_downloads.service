@@ -1,0 +1,9 @@
+[Unit]
+Description=Periodically move old downloads to tmp folder
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "find /home/nick/Downloads -maxdepth 1 -mtime +7 -exec mv "{}" /home/nick/Downloads/Old_Downloads/ \;"
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Update pacman database
+Wants=network-online.target
+After=network.target network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/pacman -Syy
+IOSchedulingClass=idle
+
+[Install]
+WantedBy=default.target

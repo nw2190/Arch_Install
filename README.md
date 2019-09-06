@@ -126,6 +126,11 @@ The Xorg window system and LightDM desktop manager can be installed from the Arc
 ```console
 $ sudo pacman -S xorg lightdm lightdm-gtk-greeter 
 ```
+and the associated systemd services can be enabled as follows:
+```console
+$ sudo systemctl enable lightdm.service
+```
+
 
 I also installed the `compton` compositor for Xorg, which may or may not be necessary for the steps below to work correctly:
 ```console

@@ -1,0 +1,22 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '((".superuser.com"
+  [url-cookie "prov" "6812d7f0-83dc-cb6e-21dd-54ab339776fc" "01-Jan-2055 00:00:00.00 GMT" "/" ".superuser.com" nil]
+  [url-cookie "HttpOnly" nil "01-Jan-2055 00:00:00.00 GMT" "/" ".superuser.com" nil])
+ (".google.com"
+  [url-cookie "1P_JAR" "2017-11-25-02" "25-Dec-2017 02:20:02.00 GMT" "/" ".google.com" nil]
+  [url-cookie "NID" "118=b0VhYAdPq_760D5-Rg4HRTDecpcntieTlIqMKLkXRG0Ngv1KRBfkFQqIbaPR2IaYfdNgxLhG-nPHbN9L4LjC4Wcf4agDzgxze2yXNhbw_R88gCZsVGxPnJu6h76kVnQO" "27-May-2018 02:19:52.00 GMT" "/" ".google.com" nil]
+  [url-cookie "HttpOnly" nil "27-May-2018 02:19:52.00 GMT" "/" ".google.com" nil]))
+)
+(setq url-cookie-secure-storage
+ '(("reddit.com"
+  [url-cookie "loid" "00000000000m148izf.2.1511575789707.Z0FBQUFBQmFHTkR0R1dsTHU3eDdva0RNLW1LOGRjaDF4RDVsbElHVXI5WE9TUWtNVUZ3Z2p1bEJoTHBXdjItcHY4Nm5XWGhWdGwyN3NJQUcydzNtR1AxSU9IWk92M2V0Nlg3TmV6dnlPclpUcUpjdXBQTTg1UHlSWUcyUXo3VGEwR2IyWDZzekkzUF8" "25-Nov-2019 02:09:49.00 GMT" "/" "reddit.com" t]
+  [url-cookie "session_tracker" "K1kWUm1xIZPLA8gigK.0.1511575789703.Z0FBQUFBQmFHTkR0VTNpczMzZmxSVHU1aUxSLWlWdHFqTERjbU0yVzdSckpSbnpzTjNtTWQteDBrZ2FmRDl5dWFBVU0td3RtaFhxc0JQWU4wLVZ0UlF3YTAzYUdlNVdra211Yk52N21kclh4SW0zRHMzbV9iQUxFaEpjUHVpaWF6Z0FwQ3M3V1BlQkE" "25-Nov-2017 04:09:49.00 GMT" "/" "reddit.com" t]))
+)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:

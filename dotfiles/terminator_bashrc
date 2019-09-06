@@ -1,0 +1,218 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm|xterm-color|*-256color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    if [[ ${EUID} == 0 ]] ; then
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] '
+    fi
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h \w \$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+if [ -x /usr/bin/mint-fortune ]; then
+     /usr/bin/mint-fortune
+fi
+
+
+#export PATH=${PATH}:/pkgs/Gambit/current/bin
+#export PATH=${PATH}:/pkgs/FEniCS/bin
+
+#export PYTHONPATH=${PYTHONPATH}:/pkgs/FEniCS/bin
+
+#export LD_LIBRARY_PATH=/pkgs/Gambit/current/lib
+LD_LIBRARY_PATH=/opt/netgen/lib
+NETGENDIR=/opt/netgen/share
+#LD_LIBRARY_PATH=/usr/share/netgen
+#NETGENDIR=/usr/share/netgen
+PATH="${PATH}:${NETGENDIR}"
+export LD_LIBRARY_PATH
+export NETGENDIR
+export PATH
+
+
+
+## ADD POWERLINE TO SHELL
+#if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+#    source /usr/share/powerline/bindings/bash/powerline.sh
+#fi
+## Note:  tmux powerline theme located at
+#  /usr/share/powerline/config_files/themes/tmux/default.json
+
+
+## ADD POWERLINE TO SHELL
+export TERM="xterm-256color"
+#powerline-daemon -q
+#POWERLINE_BASH_CONTINUATION=1
+#POWERLINE_BASH_SELECT=1
+#. /usr/share/powerline/bindings/bash/powerline.sh
+
+
+## AUTOSTART TMUX
+# If not running interactively, do not do anything
+#[[ $- != *i* ]] && return
+#[[ -z "$TMUX" ]] && exec tmux new-session -A -s root
+#[[ -z "$TMUX" ]] && exec tmux 
+#alias tmux='TERM=xterm-256color tmux'
+#alias tmux='TERM=xterm-256color tmux new-session -A -s root'
+
+# Added for yaourt
+export VISUAL="emacs"
+
+# Added for sudoedit
+export SUDO_EDITOR="emacs"
+
+## Shortcuts for ssh/rsync
+# [OMITTED]
+
+## Full tab completion for symlinks
+bind 'set mark-symlinked-directories on'
+
+
+## Change default homepage for Lynx
+#export WWW_HOME='http://www.google.com'
+export WWW_HOME='http://www.duckduckgo.com/lite/'
+
+
+# Export display for GTK applications
+#export DISPLAY=:0.0
+
+
+# Add 'x' command for executing files on NTFS
+alias x='/home/nick/Documents/Scripts/exec.sh'
+
+alias updatedb_ext='/home/nick/Documents/Scripts/updatedb_ext.sh'
+alias locate_ext='/home/nick/Documents/Scripts/locate_ext.sh'
+
+# Search directory for string
+alias grep_dir='/home/nick/Documents/Scripts/grep_dir.sh'
+
+# Search website for string
+alias web_search='/home/nick/Documents/Scripts/web_search.sh'
+
+
+# Avoid TensorFlow Warnings
+export TF_CPP_MIN_LOG_LEVEL=2
+
+
+## LOAD ALIAS FILE
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# Source get_lab_ip.sh to set $LAB environment variable
+. /home/nick/Documents/Scripts/get_lab_ip.sh
+
+# gPodder settings
+export GPODDER_HOME="/home/nick/Documents/gPodder/"
+export GPODDER_DOWNLOAD_DIR="/home/nick/Documents/gPodder/Downloads/"

@@ -1,0 +1,173 @@
+
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(inhibit-startup-screen t)
+ '(menu-bar-mode nil)
+ '(org-agenda-files nil)
+ '(package-selected-packages (quote (w3 undo-tree))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(eww-form-textarea ((t (:background "color-102" :foreground "brightwhite" :box 1))))
+ '(font-lock-builtin-face ((t (:foreground "color-33"))))
+ '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face :foreground "red"))))
+ '(font-lock-comment-face ((t (:foreground "brightred"))))
+ '(font-lock-constant-face ((t (:foreground "color-128"))))
+ '(font-lock-function-name-face ((t (:foreground "color-39"))))
+ '(font-lock-keyword-face ((t (:foreground "brightcyan"))))
+ '(font-lock-string-face ((t (:foreground "color-76"))))
+ '(font-lock-type-face ((t (:foreground "color-69"))))
+ '(font-lock-variable-name-face ((t (:foreground "yellow"))))
+ '(mode-line ((t (:background "grey25" :foreground "black" :box (:line-width -1 :style released-button)))))
+ '(mode-line-buffer-id ((t (:foreground "color-39" :weight normal))))
+ '(tex-math ((t (:inherit font-lock-string-face :foreground "color-34")))))
+
+
+;;; SET DEFAULT MODE TO TEXT-MODE
+(setq-default major-mode 'text-mode)
+
+
+;;; Add Matlab Syntax Hilighting
+;;(add-to-list 'load-path "/home/nick/.emacs.d/MATLAB/")
+;;(load-library "matlab-load")
+
+;; Enable CEDET feature support for MATLAB code. (Optional)
+;; (matlab-cedet-setup)
+
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
+
+;;; Manually added to switch default latex command to 'pdflatex'
+(setq latex-run-command "pdflatex")
+
+;;; Manually added to create MAKE file for single file projects
+;;;
+;;; REFERENCE:
+;;;
+;;; https://www.emacswiki.org/emacs/CompileCommand
+;;;
+ (require 'compile)
+ (add-hook 'c-mode-hook
+           (lambda ()
+	          (unless (file-exists-p "Makefile")
+		           (set (make-local-variable 'compile-command)
+                    ;; emulate make's .c.o implicit pattern rule, but with
+                    ;; different defaults for the CC, CPPFLAGS, and CFLAGS
+                    ;; variables:
+                    ;; $(CC) -c -o $@ $(CPPFLAGS) $(CFLAGS) $<
+				    (let ((file (file-name-nondirectory buffer-file-name)))
+                      (format "%s -o %s.o %s %s %s -lgsl -lcblas -lm"  ;; Manually added -lgsl and -lm to link GSL and Math .h files
+                              (or (getenv "CC") "gcc")
+                              (file-name-sans-extension file)
+                              (or (getenv "CPPFLAGS") "-DDEBUG=9")
+                              (or (getenv "CFLAGS") "-ansi -pedantic -Wall -g")
+			            file))))))
+;;(load-library "ess-site")
+;;(require 'ess-site)
+
+
+(setq shr-color-visible-luminance-min 90)
+(setq shr-color-visible-distance-min 90)
+
+;; Add Templates Mode
+(add-to-list 'load-path "/home/nick/.emacs.d/lisp/")
+(add-to-list 'load-path "/home/nick/.emacs.d/lisp/templates/")
+(require 'template)
+
+;; Add keybindings for creating tex file
+(global-set-key (kbd "C-x t") 'template-new-file)
+
+
+;; Add Tabbar Mode
+(add-to-list 'load-path "/home/nick/.emacs.d/lisp/tabbar-master/")
+(require 'tabbar)
+(tabbar-mode)
+
+(defun my-tabbar-buffer-groups () ;; customize to show all normal files in one group
+ "Returns the name of the tab group names the current buffer belongs to.
+ There are two groups: Emacs buffers (those whose name starts with '*', plus
+ dired buffers), and the rest.  This works at least with Emacs v24.2 using
+ tabbar.el v1.7."
+ (list (cond ((string-equal "*" (substring (buffer-name) 0 1)) "emacs")
+             ((eq major-mode 'dired-mode) "emacs")
+             (t "user"))))
+(setq tabbar-buffer-groups-function 'my-tabbar-buffer-groups)
+
+;; Add keybindings for moving between tabs
+(global-set-key (kbd "C-x n") 'tabbar-forward-tab)
+(global-set-key (kbd "C-x p") 'tabbar-backward-tab)
+
+
+;; Alias for electric-indent
+(defalias 'indent-toggle 'electric-indent-mode)
+(defalias 'toggle-indent 'electric-indent-mode)
+
+;;(defun remove-electric-indent-mode ()
+;;  (electric-indent-local-mode -1))
+
+;;(defun remove-electric-indent-mode ()
+;;  (electric-indent-mode -1))
+
+;;(add-hook 'fundamental-mode-hook 'remove-electric-indent-mode)
+;;(add-hook 'text-mode-hook 'remove-electric-indent-mode)
+
+;; Basic template function
+;;(defun test-function (str)
+;;  (interactive "sString: ")
+;;  (message "%s" str))
+
+
+;; NOT WORKING....
+;; Function for appending to start/end of lines
+;;(defun append-before (str)
+;;  (interactive "sString to insert before: ")
+;;  (replace-regexp "^" "str"))
+
+;;(defalias 'insert-before 'append-before)
+
+
+;; Mutt support.
+(setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
+
+;; Set default for '.h' files to C++
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
+;; Enable mouse scrolling
+(xterm-mouse-mode 1)
+
+
+
+;; Tabbar settings
+(set-face-attribute
+ 'tabbar-default nil
+ :background "#252525"
+ :box '(:line-width 1 :color "gray20" :style nil))
+(set-face-attribute
+ 'tabbar-unselected nil
+ :background "#404040"
+ :foreground "white"
+ :box '(:line-width 1 :color "gray20" :style nil))
+(set-face-attribute
+ 'tabbar-selected nil
+ :background "#111111"
+ ;;:foreground "lightskyblue"
+ :foreground "dodgerblue"
+ :box '(:line-width 1 :color "gray20" :style nil))
+
+
+;; Reset emacs status bar (aka 'mode-line') color
+(set-face-background 'mode-line "#252525")

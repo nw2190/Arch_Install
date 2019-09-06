@@ -1,0 +1,154 @@
+# Display large files
+alias du_G="du -h|grep '[0-9]\{1,4\}G[[:space:]]'"
+alias du_K="du -h|grep '[0-9]\{2,3\}K[[:space:]]'"
+
+
+# Allow non-root users to shutdown
+alias shutdown='sudo /sbin/shutdown now'
+alias reboot='sudo /sbin/reboot now'
+
+
+# Use color for directory listings
+alias ls='ls --color=auto'
+export PATH="$PATH:$HOME/.globus-cli-virtualenv/bin"
+
+# Add alias to use color in tmux
+alias tmux='TERM=xterm-256color tmux'
+    
+# Add alias for running Matlab in terminal
+alias matlab-terminal='matlab -nodesktop -nosplash'
+
+## Define alias for backing up system
+alias backup-system='/home/nick/Documents/Scripts/backup.sh'
+
+## Define alias for mounting external usb harddrive
+alias mount-usb='/home/nick/Documents/Scripts/mount_usb.sh'
+alias unmount-usb='/home/nick/Documents/Scripts/unmount_usb.sh'
+
+## Define alias for mirroring to external displays
+alias mirror-display='/home/nick/Documents/Scripts/mirror_display.sh'
+alias detach-display='/home/nick/Documents/Scripts/detach_display.sh'
+
+## Define alias for blanking the screen
+alias blank-screen='/home/nick/Documents/Scripts/blank_screen.sh'
+
+## Define alias for starting screensaver
+alias screensaver='/home/nick/Documents/Scripts/screensaver.sh'
+
+
+## Define alias for running Gimp from terminal
+alias gimp-terminal='/home/nick/Documents/Scripts/gimp_terminal.sh'
+
+## Define alias for checking wifi
+alias check-wifi='/home/nick/Documents/Scripts/check_wifi.sh'
+
+## Define alias for restarting wifi
+alias restart-wifi='/home/nick/Documents/Scripts/restart_wifi.sh'
+
+## Define alias for dimming screen to level 100
+alias dim-screen='/home/nick/Documents/Scripts/dim_screen.sh'
+
+## Volume commands
+alias volume-down='pactl -- set-sink-volume 0 -10%'
+alias volume-up='pactl -- set-sink-volume 0 +10%'
+
+## Temporary workaround for muting GIMP error messages
+alias gimp-terminal='/home/nick/Documents/Scripts/gimp-terminal.sh'
+
+## Rescale chrome top panel size
+alias chrome='/home/nick/Documents/Scripts/chrome.sh'
+
+
+## Define aliases for searching /media/Backup
+alias updatedb-bak='/home/nick/Documents/Scripts/updatedb_bak.sh'
+alias locate-bak='/home/nick/Documents/Scripts/locate_bak.sh'
+
+## Define alias for saving configuration files
+alias save-configs='/home/nick/Documents/Scripts/save_configs.sh'
+
+## Define alias for searching directories
+alias grep-dir="/home/nick/Documents/Scripts/grep_dir.sh"
+    
+## Define alias for viewing images with feh
+alias feh-view='/home/nick/Documents/Scripts/feh_view.sh'
+
+## Define alias for bc calculator
+#alias calc='/home/nick/Documents/Scripts/calc.sh'
+
+
+    
+## Define alias for emacs
+alias emacs="emacs -nw"
+    
+## Set default editor for ranger
+VISUAL="emacs -nw"
+export VISUAL
+EDITOR="emacs -nw"
+export EDITOR
+SUDO_EDITOR="emacs -nw"
+export SUDO_EDITOR
+#  Note: Default ranger colors were changed by editing:
+#  /usr/lib/python2.7/dist-packages/ranger/gui/color.py
+#  PDF viewer was fixed by moving evince to first ext pdf option in:
+#  /etc/ranger/config/rifle.conf
+
+
+## Use ISO C++ 2011 standard for g++ compiler
+alias g++='g++ -std=c++11'
+
+## Alias for TensorFlowJS environment
+#alias tfjs='source ~/Documents/TensorFlowJS/tfjs/bin/activate'
+
+## Alias for TensorFlow Probability environment
+alias tfp36='source ~/Documents/virtual_envs/tfp/bin/activate'
+alias tfp37='source ~/Documents/virtual_envs/tfp37/bin/activate'
+alias tfp='source ~/Documents/virtual_envs/tfp/bin/activate'
+alias tfpn='source ~/Documents/virtual_envs/tfpn/bin/activate'
+alias tf='source ~/Documents/virtual_envs/tf/bin/activate'
+alias tf2='source ~/Documents/virtual_envs/tf2/bin/activate'
+alias scikit='source ~/Documents/virtual_envs/scikit/bin/activate'
+
+## Alias for PyTorch environment
+alias torch='source ~/Documents/virtual_envs/torch/bin/activate'
+
+## Alias for restoring ALSA mixer settings
+alias restore-alsa='/home/nick/Documents/Scripts/restore_alsa.sh'
+    
+## Alias for sega emulator
+#alias Sega='/home/nick/Documents/Scripts/Sega.sh'
+alias GameGear='/home/nick/Documents/Scripts/Sega.sh'
+alias Sega='kega-fusion'
+
+
+## Define aliases for sending/retrieving files from LAB
+alias lab-get='/home/nick/Documents/Scripts/lab_get.sh'
+alias lab-send='/home/nick/Documents/Scripts/lab_send.sh'
+
+## Define alias for remote mounting LAB home directory
+alias sshfs-lab='/home/nick/Documents/Scripts/sshfs_lab.sh'
+
+## Define alias for getting lab ip address
+alias get-lab-ip='/home/nick/Documents/Scripts/get_lab_ip.sh'
+
+## Define alias for search Arch Linux Archive
+alias arch-archive='/home/nick/Documents/Scripts/arch_archive.sh'
+
+## Define alias for dictionary searches using sdcv
+alias dict='/home/nick/Documents/Scripts/Dictionary.sh'
+alias thesaurus='/home/nick/Documents/Scripts/Thesaurus.sh'
+
+## Define alias for PyCalc command
+#alias pycalc='/home/nick/Documents/Scripts/pycalc.sh'
+alias calc='/home/nick/Documents/Scripts/pycalc.sh'
+
+## Define alias for IMDB movie search
+alias imdb='/home/nick/Documents/Scripts/imdb.sh'
+
+## Define alias for date calculations
+alias date-calc='/home/nick/Documents/Scripts/date_calc.sh'
+
+## Define alias for setting timezone
+alias set-timezone='~/Documents/Scripts/set_timezone.sh'
+
+## Master of Orion II alias
+alias master-of-orion="/home/nick/Documents/Scripts/master_of_orion.sh"

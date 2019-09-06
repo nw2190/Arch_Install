@@ -1,0 +1,119 @@
+
+if [ -d ~/.texmf ] ; then
+    export TEXMFHOME=~/.texmf
+fi
+
+# added by Anaconda2 4.1.1 installer
+#export PATH="/home/nick/anaconda2/bin:$PATH"
+#export PATH="/home/nick/anaconda2/pkgs:/home/nick/anaconda2/bin:$PATH"
+
+# added by Anaconda2 4.1.1 installer
+#export PATH="/home/nick/anaconda2/bin:$PATH"
+
+# Manually added to install Dolfin
+#export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib/openmpi/:$LD_LIBRARY_PATH
+
+# Add space before ls
+#alias l='echo ;ls -l; echo '
+#alias la='echo ;ls -a; echo '
+#alias ls='echo ;ls ; echo '
+
+
+alias matlab-terminal='matlab -nodesktop -nosplash'
+
+#alias rsync_pull='rsync -r nwinovic@leibniz.math.purdue.edu:rsync_files /home/nick/'
+#alias rsync_push='rsync -r /home/nick/rsync_files nwinovic@leibniz.math.purdue.edu:'
+
+alias rsync_pull='rsync -rvu --info=progress2 nwinovic@leibniz.math.purdue.edu:rsync_files /home/nick/'
+alias rsync_push='rsync -rvu --info=progress2 /home/nick/rsync_files nwinovic@leibniz.math.purdue.edu:'
+
+alias rsync_pull_banach='rsync -rvu --info=progress2 nwinovic@banach.math.purdue.edu:rsync_files /home/nick/'
+alias rsync_push_banach='rsync -rvu --info=progress2 /home/nick/rsync_files nwinovic@banach.math.purdue.edu:'
+
+
+
+# FENICS INSTALL
+# c.f. https://bitbucket.org/fenics-project/docker
+alias start-fenics='docker run -ti -v $(pwd):/home/fenics/shared quay.io/fenicsproject/stable:current'
+
+
+# DOLFIN INSTALL
+#source /usr/local/share/dolfin/dolfin.conf
+#source /usr/share/dolfin/dolfin.conf
+
+#Before rushing off to try the demos, don't forget to update your
+#environment variables. This can be done easily using the helper file
+#'dolfin.conf' which sets the appropriate variables (for users of the
+#Bash shell).
+
+#To update your environment variables, run the following command:
+
+#source /usr/share/dolfin/dolfin.conf
+
+#For future reference, we recommend that you add this command to your
+#configuration (.bashrc, .profile or similar).
+
+
+## ADD POWERLINE TO SHELL
+#export TERM="xterm-256color"
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+# TMUX/POWERLINE settings in:
+# /usr/lib/python3.6/site-packages/powerline/config_files/themes/tmux/default.json
+
+## AUTOSTART TMUX
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux 
+#[[ -z "$TMUX" ]] && exec tmux attach -t root
+# TMUX
+if which tmux >/dev/null 2>&1; then
+    #if not inside a tmux session, and if no session is started, start a new session
+    test -z "$TMUX" && (tmux attach || tmux new-session)
+fi
+
+alias tmux='TERM=xterm-256color tmux'
+
+# Added for yaourt
+export VISUAL="emacs"
+
+# Added for sudoedit
+export SUDO_EDITOR="emacs"
+
+# Shortcuts for ssh/rsync
+export LEIBNIZ='nwinovic@leibniz.math.purdue.edu'
+export HALSTEAD='nwinovic@halstead.rcac.purdue.edu'
+
+# Full tab completion for symlinks
+bind 'set mark-symlinked-directories on'
+
+alias du_G="du -h|grep '[0-9]\{1,4\}G[[:space:]]'"
+alias du_K="du -h|grep '[0-9]\{2,3\}K[[:space:]]'"
+
+
+# Set display to open GTK applications
+#export DISPLAY=:0.0
+
+# Specify Lynx style sheet
+export LYNX_LSS="$HOME/.lynx.lss"
+#export LYNX_LSS="$HOME/lynx.lss"
+export WWW_HOME='http://duckduckgo.com/lite/'
+
+# Avoid TensorFlow Warnings
+export TF_CPP_MIN_LOG_LEVEL=2
+
+    
+## LOAD ALIAS FILE
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# Source get_lab_ip.sh to set $LAB environment variable
+. /home/nick/Documents/Scripts/get_lab_ip.sh
+
+# gPodder settings
+export GPODDER_HOME="/home/nick/Documents/gPodder/"
+export GPODDER_DOWNLOAD_DIR="/home/nick/Documents/gPodder/Downloads/"
+        

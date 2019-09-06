@@ -50,7 +50,7 @@ Reference: [https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p
 
 
 ### Installing a Boot Loader
-For the choice of boot loader, I personally followed GTRONICK and used `systemd-boot` which worked well without much effort and correctly identified and included the Windows 10 boot option.  This method can be carried out using the following commands:
+For the choice of boot loader, I personally followed GTRONICK and used `systemd-boot` which worked well without much effort and correctly identified/included the Windows 10 boot option.  This method can be carried out using the following commands:
 
 ```console
 $ pacman -S systemd-boot

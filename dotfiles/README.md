@@ -49,8 +49,8 @@ $ yaourt -S google-chrome-beta
 ```
 
 
-Extensions:
-* [vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en) - Customized key bindings for Chrome with an easy [configuration](https://github.com/philc/vimium/blob/master/README.md).    
+Recommended Extensions:
+* [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en) - Customized key bindings for Chrome with an easy [configuration](https://github.com/philc/vimium/blob/master/README.md).    
 * [Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en) - Custom CSS styles for viewing sites in Chrome.
 
 ## Qtile Commands

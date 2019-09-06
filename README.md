@@ -108,6 +108,7 @@ and uncomment the second line below:
 ## Uncomment to allow members of group wheel to execute any command
 # %wheel ALL=(ALL) ALL
 ```
+in the file which is opened by the `visudo` command.
 
 
 ## Configuring Graphical Environment

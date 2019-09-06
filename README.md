@@ -193,6 +193,8 @@ export GDK_DPI_SCALE=0.5
 ```
 -->
 
+
+<!--
 ## Additional Software and Applications
 * [Xorg](https://www.x.org/wiki/) - Open source implementation of X window system
 * [GTK+](https://www.gtk.org/) - Toolkit for graphical user interfaces
@@ -216,4 +218,4 @@ export GDK_DPI_SCALE=0.5
 * [MPlayer](http://mplayerhq.hu/design7/news.html) - Lightweight multimedia player
 * [Evince](https://wiki.gnome.org/Apps/Evince) - Document viewer
 * [Libre Office](https://www.libreoffice.org/) - Document editing suite
-    
+-->

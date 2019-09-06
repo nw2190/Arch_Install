@@ -219,6 +219,7 @@ The simplest way to correct for the high resolution display on applications such
 In Qtile, it suffices to modify the launch commands for each application accordingly; for example, the following lines can be included in the `keys` list of Qtile's `~/.config/qtile/config.py` configuration file:
 ```python
 keys = [
+
     ...
     
     Key(["control", "shift"], "s",
@@ -227,6 +228,7 @@ keys = [
          lazy.spawn("/usr/bin/google-chrome-beta --force-device-scale-factor=2.0"))
          
     ...
+    
 ]         
 ```
 

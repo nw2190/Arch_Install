@@ -65,7 +65,8 @@ editor 0
 ```
 GTRONICK also provides an easy way of retrieving the hard drive's UUID which starts by issuing the command:
 ```
-echo $(blkid -s PARTUUID -o value /dev/nvme0n1p*) > /boot/loader/entries/arch.conf   # Where '*' is the partition number
+echo $(blkid -s PARTUUID -o value /dev/nvme0n1p*) > /boot/loader/entries/arch.conf
+# (where '*' is the partition number)
 ```
 and is completed by editing the `/boot/loader/entries/arch.conf` file to include the loader specifications:
 ```

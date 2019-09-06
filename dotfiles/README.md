@@ -25,7 +25,20 @@ This repository stores the main configuration files for Arch Linux and associate
 * [MPlayer](http://mplayerhq.hu/design7/news.html) - Lightweight multimedia player
 * [Evince](https://wiki.gnome.org/Apps/Evince) - Document viewer
 * [Libre Office](https://www.libreoffice.org/) - Document editing suite
-    
+
+
+## Installing Yaourt
+
+
+### Google Chrome Beta
+```console
+$ yaourt -S google-chrome-beta
+```
+
+Extensions:
+*[vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en) - Customized key bindings for Chrome with an easy [configuration](https://github.com/philc/vimium/blob/master/README.md).
+*[Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en) - Custom CSS styles for viewing sites in Chrome.
+
 ## Qtile Commands
 The following commands are defined in the provided `.config/qtile/config.py` file.
 

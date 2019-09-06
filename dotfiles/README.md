@@ -29,15 +29,29 @@ This repository stores the main configuration files for Arch Linux and associate
 
 ## Installing Yaourt
 
+```console
+$ sudo pacman -S --needed base-devel git wget yajl
+$ git clone https://aur.archlinux.org/package-query.git
+$ cd package-query/
+$ makepkg -si
+$ cd ..
+$ git clone https://aur.archlinux.org/yaourt.git
+$ cd yaourt/
+$ makepkg -si
+```
+
+Reference: [https://www.ostechnix.com/install-yaourt-arch-linux/](https://www.ostechnix.com/install-yaourt-arch-linux/)
+
 
 ### Google Chrome Beta
 ```console
 $ yaourt -S google-chrome-beta
 ```
 
+
 Extensions:
-*[vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en) - Customized key bindings for Chrome with an easy [configuration](https://github.com/philc/vimium/blob/master/README.md).
-*[Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en) - Custom CSS styles for viewing sites in Chrome.
+* [vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en) - Customized key bindings for Chrome with an easy [configuration](https://github.com/philc/vimium/blob/master/README.md).    
+* [Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en) - Custom CSS styles for viewing sites in Chrome.
 
 ## Qtile Commands
 The following commands are defined in the provided `.config/qtile/config.py` file.

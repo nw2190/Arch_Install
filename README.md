@@ -76,8 +76,38 @@ initrd /initramfs-linux.img
 options root=PARTUUID=<UUID SENT TO FILE IN PREVIOUS STEP> rw
 ```
 
+
+### Configure Wireless Internet
 Also be sure to install the networking and wireless packages (e.g. `wpa_supplicant`) so that you will have an internet connection after rebooting the machine.
 
+
+### Adding Users with Sudo Privileges
+
+DistroTube provides an overview of a minmal, yet practical, user administration configuration which can be used to create a user named `<USER_NAME>` as follows:
+```console
+$ pacman -S sudo
+$ useradd -m <USER_NAME>
+$ passwd <USER_NAME>
+$ usermod -aG wheel,audio,video,optical,storage <USER_NAME>
+```
+
+<!--
+This can be verified with the command:
+```console
+groups <USER_NAME>
+```
+-->
+
+The user must then be added to the `sudoers` file via:
+```console
+$ pacman -S vim
+$ visudo
+```
+and uncomment the second line below:
+```
+## Uncomment to allow members of group wheel to execute any command
+# %wheel ALL=(ALL) ALL
+```
 
 
 ## Configuring Graphical Environment

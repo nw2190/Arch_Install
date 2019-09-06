@@ -98,7 +98,7 @@ groups <USER_NAME>
 ```
 -->
 
-To grant the user sudoer privileges, run the commands:
+To grant the user sudo privileges, run the commands:
 ```console
 $ pacman -S vim
 $ visudo

@@ -98,17 +98,17 @@ groups <USER_NAME>
 ```
 -->
 
-The user can then be granted sudoer privileges by adding them to the `sudoers` file by running:
+To grant the user sudoer privileges, run the commands:
 ```console
 $ pacman -S vim
 $ visudo
 ```
-and uncommenting the second line below:
+and uncomment the second line listed below:
 ```
 ## Uncomment to allow members of group wheel to execute any command
 # %wheel ALL=(ALL) ALL
 ```
-in the file which is opened by the `visudo` command in the previous step.
+in the file opened by the `visudo` command in the previous step.
 
 
 ## Configuring Graphical Environment

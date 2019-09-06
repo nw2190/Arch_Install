@@ -218,10 +218,16 @@ In my case, setting the font size to `16` in `lxappearance` and changing the DPI
 The simplest way to correct for the high resolution display on applications such as Google Chrome or Spotify is to use the command line argument `--force-device-scale-factor`.
 In Qtile, it suffices to modify the launch commands for each application accordingly; for example, the following lines can be included in the `keys` list of Qtile's `~/.config/qtile/config.py` configuration file:
 ```python
-Key(["control", "shift"], "s",
-     lazy.spawn("/usr/bin/spotify --force-device-scale-factor=2.25 %U")),
-Key(["control", "shift"], "w",
-     lazy.spawn("/usr/bin/google-chrome-beta --force-device-scale-factor=2.0"))
+keys = [
+    ...
+    
+    Key(["control", "shift"], "s",
+         lazy.spawn("/usr/bin/spotify --force-device-scale-factor=2.25 %U")),
+    Key(["control", "shift"], "w",
+         lazy.spawn("/usr/bin/google-chrome-beta --force-device-scale-factor=2.0"))
+         
+    ...
+]         
 ```
 
 

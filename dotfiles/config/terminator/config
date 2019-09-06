@@ -1,0 +1,48 @@
+[global_config]
+  borderless = True
+  extra_styling = False
+  tab_position = hidden
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+  [[tmux-layout]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = f51a0152-491f-40e0-a2a7-e3878f8f1c85
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 0:0
+      size = 1920, 1158
+      title = nick@NW2190:~
+      type = Window
+    [[[terminal1]]]
+      order = 0
+      parent = child0
+      profile = nick-tmux
+      type = Terminal
+      uuid = f51a0152-491f-40e0-a2a7-e3878f8f1c85
+[plugins]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    font = Noto Sans Mono Medium 18
+    icon_bell = False
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+  [[nick-tmux]]
+    cursor_color = "#aaaaaa"
+    custom_command = /bin/bash --rcfile /home/nick/.terminator_tmux_bashrc
+    font = Noto Sans Mono 18
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_custom_command = True
+    use_system_font = False

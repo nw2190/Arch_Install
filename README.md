@@ -17,7 +17,7 @@ Secure boot should also be disabled before attempting to install Linux; this is 
 This is a very important step which I missed initially; Arch will not be able to access the laptop's hard drive without disabling Microsoft's "BitLocker" encryption on the drive.  The relevant steps are provided [here](https://www.manageengine.com/products/os-deployer/help/how-to-disable-bitlocker-encryption.html).
 
 
-### Switch SATA operating mode from `RAID` to `AHCI` (Optional?)
+### Switch SATA operating mode from `RAID` to `AHCI`
 __Warning__: I am not sure if this step is entirely necessary, and I definitely came close to completely breaking Windows the first time I attempted it.
 
 By following the instructions provided [here](https://support.thinkcritical.com/kb/articles/switch-windows-10-from-raid-ide-to-ahci), I was able to safely switch the operating mode the second time around.

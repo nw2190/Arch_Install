@@ -76,9 +76,9 @@ and is completed by editing the `/boot/loader/entries/arch.conf` file to include
 title ArchLinux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
-options root=PARTUUID=<UUID SENT TO FILE IN PREVIOUS STEP> rw
+options root=PARTUUID=xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx rw
 ```
-
+where `xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx` denotes the UUID written to the file in the previous step.
 
 ### Configure Wireless Internet
 Also be sure to install the networking and wireless packages (e.g. `wpa_supplicant`) so that you will have an internet connection after rebooting the machine.

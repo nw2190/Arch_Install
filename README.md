@@ -60,9 +60,12 @@ The configuration settings should then be specified in the `/boot/loader/loader.
 ```
 default arch
 timeout 3
-console-mode max
+console-mode 1
 editor 0
 ```
+Reference: [https://github.com/systemd/systemd/pull/8086](https://github.com/systemd/systemd/pull/8086)
+
+
 GTRONICK also provides an easy way of retrieving the hard drive's UUID which starts by issuing the command:
 ```
 echo $(blkid -s PARTUUID -o value /dev/nvme0n1p*) > /boot/loader/entries/arch.conf

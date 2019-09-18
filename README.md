@@ -22,7 +22,7 @@ __Warning__: I am not sure if this step is entirely necessary, and I definitely 
 
 By following the instructions provided [here](https://support.thinkcritical.com/kb/articles/switch-windows-10-from-raid-ide-to-ahci), I was able to safely switch the operating mode the second time around.
 
-Reference: [https://bbs.archlinux.org/viewtopic.php?id=245335](https://bbs.archlinux.org/viewtopic.php?id=245335)
+__Reference__: [https://bbs.archlinux.org/viewtopic.php?id=245335](https://bbs.archlinux.org/viewtopic.php?id=245335)
 
 
 
@@ -37,7 +37,7 @@ Once the steps above have been completed, we just need to free up space on the h
 
 Follow standard installation procedures using the newly allocated block of memory:
 * [DistroTube](https://www.youtube.com/channel/UCVls1GmFKf6WlTraIb_IaJg) - [Installation Video [English] ](https://www.youtube.com/watch?v=HpskN_jKyhc)  following the [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide)
-* [GTRONICK](https://www.youtube.com/channel/UCUpnwLms-qS0APsWMXylJzA) - [Installation Video [Spanish] ](https://www.youtube.com/watch?v=pd1hgF4p8gw&t=1939s) for dual-booting with the installation instructions [here](https://gtronick.github.io/ALIG-DUAL/)
+* [GTRONICK](https://www.youtube.com/channel/UCUpnwLms-qS0APsWMXylJzA) - [Installation Video [Spanish] ](https://www.youtube.com/watch?v=pd1hgF4p8gw&t=1939s) for dual-booting with the installation instructions provided [here](https://gtronick.github.io/ALIG-DUAL/)
 
 
 
@@ -46,7 +46,7 @@ Since the Dell XPS 13 laptops do not have standard USB ports, the ouput of comma
 
 __Note__: The Arch USB was not able to detect the laptop's hard drive on my first installation attempt.  This issue was resolved by disabling the "BitLocker" Encryption on Windows and changing the SATA operating mode to `AHCI` in my case.
 
-Reference: [https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda](https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda)
+__Reference__: [https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda](https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda)
 
 
 ### Installing a Boot Loader
@@ -63,7 +63,7 @@ timeout 3
 console-mode 1
 editor 0
 ```
-Reference: [https://github.com/systemd/systemd/pull/8086](https://github.com/systemd/systemd/pull/8086)
+__Reference__: [https://github.com/systemd/systemd/pull/8086](https://github.com/systemd/systemd/pull/8086)
 
 
 GTRONICK also provides an easy way of retrieving the hard drive's UUID which starts by issuing the command:

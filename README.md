@@ -165,7 +165,6 @@ However, I was able to achieve the desired effect by creating/modifying the foll
 
 `.xinitrc`
 ```
-xrandr --dpi 150
 xrandr --output eDP1 --scale 1x1 --mode 3840x2160
 sleep 2
 compton 

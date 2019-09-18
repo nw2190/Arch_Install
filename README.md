@@ -1,7 +1,7 @@
 # Arch Linux Installation for Dell XPS 13 (9380) [2019]
 This repository provides a basic overview of the steps required for dual-booting Arch Linux and Windows 10 on Dell XPS 13 (9380) laptops.
 This is primarily intended to be a _supplement_ to the more complete [Arch Installation Guide](https://wiki.archlinux.org/index.php/installation_guide)
-and focuses on steps which require extra attention when installing on Dell XPS 13 (9380) model laptops.
+and focuses on steps which require additional attention when installing Arch Linux on Dell XPS 13 (9380) model laptops.
 
 
 ## Configuring Windows 10

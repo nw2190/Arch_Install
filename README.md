@@ -235,7 +235,7 @@ keys = [
 ```
 where the `%U` option is passed to accept URL lists as command-line arguments.
 
-__Reference__: [https://askubuntu.com/questions/30210/what-does-u-mean-when-calling-a-command}(https://askubuntu.com/questions/30210/what-does-u-mean-when-calling-a-command)
+__Reference__: [https://askubuntu.com/questions/30210/what-does-u-mean-when-calling-a-command](https://askubuntu.com/questions/30210/what-does-u-mean-when-calling-a-command)
 
 <!--
 __Note__: I also came across some posts which suggested creating the file `/etc/profile.d/gtk3-hidpi.sh` with the following contents:

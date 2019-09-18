@@ -56,7 +56,7 @@ For the choice of boot loader, I personally followed GTRONICK and used `systemd-
 $ pacman -S systemd-boot
 $ bootctl --path=/boot install
 ```
-The configuration settings should then be specified in the `/boot/loader/loader.conf` file, with something along the lines of:
+The configuration settings should be specified in the `/boot/loader/loader.conf` file, with something along the lines of:
 ```
 default arch
 timeout 3

@@ -227,13 +227,15 @@ keys = [
     Key(["control", "shift"], "s",
          lazy.spawn("/usr/bin/spotify --force-device-scale-factor=2.25 %U")),
     Key(["control", "shift"], "w",
-         lazy.spawn("/usr/bin/google-chrome-beta --force-device-scale-factor=2.0"))
+         lazy.spawn("/usr/bin/google-chrome-beta --force-device-scale-factor=2.0 %U"))
          
     ...
     
 ]         
 ```
+where the `%U` option is passed to accept URL lists as command-line arguments.
 
+__Reference__: [https://askubuntu.com/questions/30210/what-does-u-mean-when-calling-a-command}(https://askubuntu.com/questions/30210/what-does-u-mean-when-calling-a-command)
 
 <!--
 __Note__: I also came across some posts which suggested creating the file `/etc/profile.d/gtk3-hidpi.sh` with the following contents:

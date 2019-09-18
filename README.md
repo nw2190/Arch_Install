@@ -36,8 +36,8 @@ Once the steps above have been completed, we just need to free up space on the h
 ## Installing Arch Linux
 
 Follow standard installation procedures using the newly allocated block of memory:
-* [DistroTube](https://www.youtube.com/channel/UCVls1GmFKf6WlTraIb_IaJg) - [Installation Video](https://www.youtube.com/watch?v=HpskN_jKyhc) [English] following the [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide)
-* [GTRONICK](https://www.youtube.com/channel/UCUpnwLms-qS0APsWMXylJzA) - [Installation Video](https://www.youtube.com/watch?v=pd1hgF4p8gw&t=1939s) [Spanish] for dual-booting with the installation instructions [here](https://gtronick.github.io/ALIG-DUAL/)
+* [DistroTube](https://www.youtube.com/channel/UCVls1GmFKf6WlTraIb_IaJg) - [Installation Video [English] ](https://www.youtube.com/watch?v=HpskN_jKyhc)  following the [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide)
+* [GTRONICK](https://www.youtube.com/channel/UCUpnwLms-qS0APsWMXylJzA) - [Installation Video [Spanish] ](https://www.youtube.com/watch?v=pd1hgF4p8gw&t=1939s) for dual-booting with the installation instructions [here](https://gtronick.github.io/ALIG-DUAL/)
 
 
 

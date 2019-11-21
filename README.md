@@ -233,6 +233,14 @@ keys = [
 ```
 
 
+
+#### TTY Font Size
+The font size of the teletype/TTY terminals (i.e. the terminals accessed using commands such as `Ctrl` + `Alt` + `F2`) can be changed by switching the default virtual console font.  In particular, after installing the `kbd` and `terminus-font` packages and verifying that the `ter-132n.psf.gz` file exists in the `/usr/share/kbd/consolefonts/` directory, the default font can be changed by adding the following line to the `/etc/vconsole.conf` file:
+```
+FONT=ter-132n
+```
+
+
 <!--
 __Note__: I also came across some posts which suggested creating the file `/etc/profile.d/gtk3-hidpi.sh` with the following contents:
 ```

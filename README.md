@@ -1,7 +1,7 @@
-# Arch Linux Installation Guide for Dell XPS 13 [2019]
+# Arch Linux Installation for Dell XPS 13 (9380) [2019]
 This repository provides a basic overview of the steps required for dual-booting Arch Linux and Windows 10 on Dell XPS 13 (9380) laptops.
 This is primarily intended to be a _supplement_ to the more complete [Arch Installation Guide](https://wiki.archlinux.org/index.php/installation_guide)
-and focuses on steps which require extra attention when installing on Dell XPS 13 (9380) model laptops.
+and focuses on steps which require additional attention when installing Arch Linux on Dell XPS 13 (9380) model laptops.
 
 
 ## Configuring Windows 10
@@ -17,12 +17,12 @@ Secure boot should also be disabled before attempting to install Linux; this is 
 This is a very important step which I missed initially; Arch will not be able to access the laptop's hard drive without disabling Microsoft's "BitLocker" encryption on the drive.  The relevant steps are provided [here](https://www.manageengine.com/products/os-deployer/help/how-to-disable-bitlocker-encryption.html).
 
 
-### Switch SATA operating mode from `RAID` to `AHCI` (Optional?)
+### Switch SATA operating mode from `RAID` to `AHCI`
 __Warning__: I am not sure if this step is entirely necessary, and I definitely came close to completely breaking Windows the first time I attempted it.
 
 By following the instructions provided [here](https://support.thinkcritical.com/kb/articles/switch-windows-10-from-raid-ide-to-ahci), I was able to safely switch the operating mode the second time around.
 
-Reference: [https://bbs.archlinux.org/viewtopic.php?id=245335](https://bbs.archlinux.org/viewtopic.php?id=245335)
+__Reference__: [https://bbs.archlinux.org/viewtopic.php?id=245335](https://bbs.archlinux.org/viewtopic.php?id=245335)
 
 
 
@@ -36,8 +36,8 @@ Once the steps above have been completed, we just need to free up space on the h
 ## Installing Arch Linux
 
 Follow standard installation procedures using the newly allocated block of memory:
-* [DistroTube](https://www.youtube.com/channel/UCVls1GmFKf6WlTraIb_IaJg) [English] - [Installation Video](https://www.youtube.com/watch?v=HpskN_jKyhc) following the [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide)
-* [GTRONICK](https://www.youtube.com/channel/UCUpnwLms-qS0APsWMXylJzA) [Spanish] - [Installation Video](https://www.youtube.com/watch?v=pd1hgF4p8gw&t=1939s) for dual-booting with the installation instructions [here](https://gtronick.github.io/ALIG-DUAL/)
+* [DistroTube](https://www.youtube.com/channel/UCVls1GmFKf6WlTraIb_IaJg) - [Installation Video [English] ](https://www.youtube.com/watch?v=HpskN_jKyhc)  following the [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide)
+* [GTRONICK](https://www.youtube.com/channel/UCUpnwLms-qS0APsWMXylJzA) - [Installation Video [Spanish] ](https://www.youtube.com/watch?v=pd1hgF4p8gw&t=1939s) for dual-booting with the installation instructions provided [here](https://gtronick.github.io/ALIG-DUAL/)
 
 
 
@@ -46,7 +46,7 @@ Since the Dell XPS 13 laptops do not have standard USB ports, the ouput of comma
 
 __Note__: The Arch USB was not able to detect the laptop's hard drive on my first installation attempt.  This issue was resolved by disabling the "BitLocker" Encryption on Windows and changing the SATA operating mode to `AHCI` in my case.
 
-Reference: [https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda](https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda)
+__Reference__: [https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda](https://askubuntu.com/questions/932331/filesystem-shows-dev-nvme0n1p1-instead-of-dev-sda)
 
 
 ### Installing a Boot Loader
@@ -56,13 +56,16 @@ For the choice of boot loader, I personally followed GTRONICK and used `systemd-
 $ pacman -S systemd-boot
 $ bootctl --path=/boot install
 ```
-The configuration settings should then be specified in the `/boot/loader/loader.conf` file, with something along the lines of:
+The configuration settings should be specified in the `/boot/loader/loader.conf` file, with something along the lines of:
 ```
 default arch
 timeout 3
-console-mode max
+console-mode 1
 editor 0
 ```
+__Reference__: [https://github.com/systemd/systemd/pull/8086](https://github.com/systemd/systemd/pull/8086)
+
+
 GTRONICK also provides an easy way of retrieving the hard drive's UUID which starts by issuing the command:
 ```
 echo $(blkid -s PARTUUID -o value /dev/nvme0n1p*) > /boot/loader/entries/arch.conf
@@ -73,9 +76,9 @@ and is completed by editing the `/boot/loader/entries/arch.conf` file to include
 title ArchLinux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
-options root=PARTUUID=<UUID SENT TO FILE IN PREVIOUS STEP> rw
+options root=PARTUUID=xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx rw
 ```
-
+where `xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx` denotes the UUID written to the file in the previous step.
 
 ### Configure Wireless Internet
 Also be sure to install the networking and wireless packages (e.g. `wpa_supplicant`) so that you will have an internet connection after rebooting the machine.
@@ -152,7 +155,7 @@ $ mkdir ~/.config
 $ mkdir ~/.config/qtile
 $ wget https://raw.githubusercontent.com/qtile/qtile/master/libqtile/resources/default_config.py ./
 $ chmod 755 default_config.py
-$ mv default_config.py ~/.config/qtile/
+$ mv default_config.py ~/.config/qtile/config.py
 ```
 
 
@@ -162,7 +165,6 @@ However, I was able to achieve the desired effect by creating/modifying the foll
 
 `.xinitrc`
 ```
-xrandr --dpi 150
 xrandr --output eDP1 --scale 1x1 --mode 3840x2160
 sleep 2
 compton 
@@ -225,13 +227,15 @@ keys = [
     Key(["control", "shift"], "s",
          lazy.spawn("/usr/bin/spotify --force-device-scale-factor=2.25 %U")),
     Key(["control", "shift"], "w",
-         lazy.spawn("/usr/bin/google-chrome-beta --force-device-scale-factor=2.0"))
+         lazy.spawn("/usr/bin/google-chrome-beta --force-device-scale-factor=2.0 %U"))
          
     ...
     
 ]         
 ```
+where the `%U` option is passed to accept URL lists as command-line arguments.
 
+__Reference__: [https://askubuntu.com/questions/30210/what-does-u-mean-when-calling-a-command](https://askubuntu.com/questions/30210/what-does-u-mean-when-calling-a-command)
 
 
 #### TTY Font Size
